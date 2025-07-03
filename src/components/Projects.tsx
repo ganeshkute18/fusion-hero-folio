@@ -30,59 +30,59 @@ export const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-32 relative">
+    <section id="projects" className="py-20 bg-gray-50 border-t border-gray-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Simple Header */}
-        <div className="mb-20 animate-fade-in">
-          <h2 className="text-5xl font-light text-white mb-4">Projects</h2>
-          <div className="w-12 h-px bg-white/20"></div>
+        {/* Clean Header */}
+        <div className="mb-16 animate-fade-in">
+          <h2 className="text-3xl font-light text-gray-900 mb-2">Projects</h2>
+          <div className="w-12 h-px bg-gray-200"></div>
         </div>
 
-        {/* Clean Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {/* Compact Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="group animate-fade-in"
+              className="group animate-fade-in bg-white rounded-lg border border-gray-100 overflow-hidden hover:shadow-sm transition-shadow duration-300"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Simple Image */}
-              <div className="aspect-video mb-6 overflow-hidden rounded-lg bg-white/5">
+              {/* Compact Image */}
+              <div className="aspect-video overflow-hidden bg-gray-50">
                 <img
-                  src={`https://images.unsplash.com/${project.image}?w=600&h=400&fit=crop`}
+                  src={`https://images.unsplash.com/${project.image}?w=400&h=250&fit=crop`}
                   alt={project.title}
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                  className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
 
-              {/* Clean Content */}
-              <div className="space-y-4">
-                <h3 className="text-2xl font-light text-white">
+              {/* Compact Content */}
+              <div className="p-6 space-y-3">
+                <h3 className="text-xl font-light text-gray-900">
                   {project.title}
                 </h3>
-                <p className="text-white/60 leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {project.description}
                 </p>
 
-                {/* Simple Tech Stack */}
-                <div className="flex flex-wrap gap-2">
+                {/* Compact Tech Stack */}
+                <div className="flex flex-wrap gap-1">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-sm text-white/70 border border-white/10 rounded-full"
+                      className="px-2 py-1 text-xs text-gray-500 bg-gray-50 border border-gray-100 rounded"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Minimal Links */}
-                <div className="flex space-x-4 pt-2">
-                  <a href="#" className="text-white/60 hover:text-white transition-colors duration-300">
-                    <Github size={20} />
+                {/* Compact Links */}
+                <div className="flex space-x-3 pt-2">
+                  <a href="#" className="text-gray-400 hover:text-gray-600 transition-colors duration-300">
+                    <Github size={16} />
                   </a>
-                  <a href="#" className="text-white/60 hover:text-white transition-colors duration-300">
-                    <ExternalLink size={20} />
+                  <a href="#" className="text-gray-400 hover:text-gray-600 transition-colors duration-300">
+                    <ExternalLink size={16} />
                   </a>
                 </div>
               </div>

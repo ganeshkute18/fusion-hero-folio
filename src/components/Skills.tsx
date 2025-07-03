@@ -20,31 +20,31 @@ export const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-32 relative">
+    <section id="skills" className="py-20 bg-white border-t border-gray-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Simple Header */}
-        <div className="mb-20 animate-fade-in">
-          <h2 className="text-5xl font-light text-white mb-4">Skills</h2>
-          <div className="w-12 h-px bg-white/20"></div>
+        {/* Clean Header */}
+        <div className="mb-16 animate-fade-in">
+          <h2 className="text-3xl font-light text-gray-900 mb-2">Skills</h2>
+          <div className="w-12 h-px bg-gray-200"></div>
         </div>
 
-        {/* Clean Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        {/* Compact Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {skillCategories.map((category, index) => (
             <div
               key={category.title}
               className="animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <h3 className="text-2xl font-light text-white mb-8">
+              <h3 className="text-xl font-light text-gray-900 mb-6">
                 {category.title}
               </h3>
               
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {category.skills.map((skill) => (
-                  <div key={skill} className="flex items-center justify-between py-2 border-b border-white/5">
-                    <span className="text-white/80">{skill}</span>
-                    <div className="w-2 h-2 bg-cyan-400/60 rounded-full"></div>
+                  <div key={skill} className="flex items-center justify-between py-2 border-b border-gray-50">
+                    <span className="text-gray-700 text-sm">{skill}</span>
+                    <div className="w-1.5 h-1.5 bg-gray-300 rounded-full"></div>
                   </div>
                 ))}
               </div>

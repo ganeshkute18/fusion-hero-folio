@@ -24,36 +24,28 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
-      {/* Clean Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Simple Section Header */}
+    <section id="contact" className="py-20 bg-gray-50 border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Clean Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-block mb-6">
-            <h2 className="text-4xl md:text-5xl font-light text-white">
-              Let's Connect
-            </h2>
-            <div className="w-24 h-1 bg-white/20 mx-auto mt-4 rounded-full animate-fade-in delay-300"></div>
-          </div>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto animate-fade-in delay-200">
+          <h2 className="text-3xl font-light text-gray-900 mb-2">
+            Let's Connect
+          </h2>
+          <div className="w-12 h-px bg-gray-200 mx-auto mt-4"></div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-6 animate-fade-in delay-200">
             Ready to collaborate on exciting AI and embedded systems projects? Let's build something amazing together.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Info */}
-          <div className="space-y-8 animate-fade-in-left">
-            <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500">
-              <h3 className="text-2xl font-light text-white mb-6 flex items-center space-x-3">
-                <MessageCircle className="text-white/80" size={24} />
+          <div className="space-y-6 animate-fade-in-left">
+            <div className="bg-white rounded-lg p-6 border border-gray-100 shadow-sm">
+              <h3 className="text-xl font-light text-gray-900 mb-6 flex items-center space-x-3">
+                <MessageCircle className="text-gray-500" size={20} />
                 <span>Get in Touch</span>
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {[
                   { 
                     icon: Mail, 
@@ -77,15 +69,14 @@ export const Contact = () => {
                   <a
                     key={label}
                     href={href}
-                    className="flex items-center space-x-4 text-white/80 hover:text-white transition-all duration-300 p-4 rounded-xl hover:bg-white/5 animate-scale-in"
-                    style={{ animationDelay: `${index * 100}ms` }}
+                    className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors duration-300 p-3 rounded-lg hover:bg-gray-50"
                   >
-                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center transition-all duration-300 border border-white/10 hover:border-white/20">
-                      <Icon size={20} />
+                    <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                      <Icon size={16} />
                     </div>
                     <div>
-                      <div className="text-sm text-white/60">{label}</div>
-                      <div className="font-medium hover:text-white transition-colors">{value}</div>
+                      <div className="text-xs text-gray-500">{label}</div>
+                      <div className="font-medium text-sm">{value}</div>
                     </div>
                   </a>
                 ))}
@@ -93,30 +84,30 @@ export const Contact = () => {
             </div>
 
             {/* Quick Stats */}
-            <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 animate-scale-in delay-200">
-              <h3 className="text-xl font-light text-white mb-6 flex items-center space-x-3">
-                <Clock className="text-white/80" size={20} />
+            <div className="bg-white rounded-lg p-6 border border-gray-100 shadow-sm">
+              <h3 className="text-lg font-light text-gray-900 mb-4 flex items-center space-x-3">
+                <Clock className="text-gray-500" size={18} />
                 <span>Quick Stats</span>
               </h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center p-4 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300">
-                  <div className="text-2xl font-light text-white">24/7</div>
-                  <div className="text-sm text-white/70">Response Time</div>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="text-center p-3 bg-gray-50 rounded border border-gray-100">
+                  <div className="text-xl font-light text-gray-900">24/7</div>
+                  <div className="text-xs text-gray-600">Response Time</div>
                 </div>
-                <div className="text-center p-4 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300">
-                  <div className="text-2xl font-light text-white">100%</div>
-                  <div className="text-sm text-white/70">Project Success</div>
+                <div className="text-center p-3 bg-gray-50 rounded border border-gray-100">
+                  <div className="text-xl font-light text-gray-900">100%</div>
+                  <div className="text-xs text-gray-600">Project Success</div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 animate-fade-in-right">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="animate-fade-in delay-100">
-                  <label htmlFor="name" className="block text-white/80 mb-2 font-light">
+          <div className="bg-white rounded-lg p-6 border border-gray-100 shadow-sm animate-fade-in-right">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="name" className="block text-gray-700 mb-1 text-sm font-medium">
                     Name
                   </label>
                   <input
@@ -125,13 +116,13 @@ export const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-transparent transition-all duration-300 hover:border-white/30 backdrop-blur-sm"
+                    className="w-full px-3 py-2 bg-white border border-gray-200 rounded text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-colors duration-300"
                     placeholder="Your name"
                     required
                   />
                 </div>
-                <div className="animate-fade-in delay-200">
-                  <label htmlFor="email" className="block text-white/80 mb-2 font-light">
+                <div>
+                  <label htmlFor="email" className="block text-gray-700 mb-1 text-sm font-medium">
                     Email
                   </label>
                   <input
@@ -140,15 +131,15 @@ export const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-transparent transition-all duration-300 hover:border-white/30 backdrop-blur-sm"
+                    className="w-full px-3 py-2 bg-white border border-gray-200 rounded text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-colors duration-300"
                     placeholder="your@email.com"
                     required
                   />
                 </div>
               </div>
 
-              <div className="animate-fade-in delay-300">
-                <label htmlFor="subject" className="block text-white/80 mb-2 font-light">
+              <div>
+                <label htmlFor="subject" className="block text-gray-700 mb-1 text-sm font-medium">
                   Subject
                 </label>
                 <input
@@ -157,14 +148,14 @@ export const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-transparent transition-all duration-300 hover:border-white/30 backdrop-blur-sm"
+                  className="w-full px-3 py-2 bg-white border border-gray-200 rounded text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-colors duration-300"
                   placeholder="Project collaboration"
                   required
                 />
               </div>
 
-              <div className="animate-fade-in delay-400">
-                <label htmlFor="message" className="block text-white/80 mb-2 font-light">
+              <div>
+                <label htmlFor="message" className="block text-gray-700 mb-1 text-sm font-medium">
                   Message
                 </label>
                 <textarea
@@ -172,8 +163,8 @@ export const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={5}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-transparent transition-all duration-300 resize-none hover:border-white/30 backdrop-blur-sm"
+                  rows={4}
+                  className="w-full px-3 py-2 bg-white border border-gray-200 rounded text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-colors duration-300 resize-none"
                   placeholder="Tell me about your project ideas..."
                   required
                 ></textarea>
@@ -181,9 +172,9 @@ export const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-white/20 hover:bg-white/30 text-white font-light py-4 px-6 rounded-lg transition-all duration-500 transform hover:scale-[1.02] flex items-center justify-center space-x-3 animate-slide-up delay-500 border border-white/20 hover:border-white/30"
+                className="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-4 rounded transition-colors duration-300 flex items-center justify-center space-x-2"
               >
-                <Send size={20} />
+                <Send size={16} />
                 <span>Send Message</span>
               </button>
             </form>
@@ -191,15 +182,15 @@ export const Contact = () => {
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-16 pt-8 border-t border-white/10 animate-fade-in delay-600">
-          <div className="flex items-center justify-center space-x-4 mb-4">
-            <CheckCircle className="text-white/60" size={20} />
-            <p className="text-white/60">
+        <div className="text-center mt-16 pt-6 border-t border-gray-100">
+          <div className="flex items-center justify-center space-x-3 mb-3">
+            <CheckCircle className="text-gray-400" size={16} />
+            <p className="text-gray-600 text-sm">
               © 2025 Alex Chen. Built with passion for AI and embedded systems.
             </p>
           </div>
-          <div className="inline-flex items-center space-x-2 text-sm text-white/40">
-            <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse"></div>
+          <div className="inline-flex items-center space-x-2 text-xs text-gray-500">
+            <div className="w-1.5 h-1.5 bg-gray-400 rounded-full"></div>
             <span>Currently available for freelance work</span>
           </div>
         </div>

@@ -24,48 +24,48 @@ export const Navigation = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled 
-        ? "bg-black/20 backdrop-blur-sm" 
-        : "bg-transparent"
+        ? "bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm" 
+        : "bg-white/80 backdrop-blur-sm"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-6">
-          {/* Simple Logo */}
-          <div className="flex items-center space-x-3">
-            <Code2 className="text-white" size={24} />
-            <span className="text-xl font-light text-white">Portfolio</span>
+        <div className="flex justify-between items-center py-4">
+          {/* Clean Logo */}
+          <div className="flex items-center space-x-2">
+            <Code2 className="text-gray-700" size={20} />
+            <span className="text-lg font-light text-gray-900">Portfolio</span>
           </div>
           
           {/* Clean Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-6">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-white/60 hover:text-white transition-colors duration-300 font-light"
+                className="text-gray-600 hover:text-gray-900 transition-colors duration-300 font-light text-sm"
               >
                 {item.label}
               </a>
             ))}
           </div>
 
-          {/* Simple Mobile Menu Button */}
+          {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-gray-700"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
-        {/* Clean Mobile Navigation */}
+        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-6">
-            <div className="space-y-4">
+          <div className="md:hidden pb-4 border-t border-gray-100">
+            <div className="space-y-2 pt-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="block text-white/60 hover:text-white transition-colors duration-300 font-light"
+                  className="block text-gray-600 hover:text-gray-900 transition-colors duration-300 font-light text-sm py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
